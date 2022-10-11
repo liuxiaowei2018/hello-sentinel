@@ -1,0 +1,83 @@
+nacos:
+  server-addr: 172.31.2.27:8848
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        namespace: ${spring.profiles.active}
+        file-extension: yml
+        group: hello-sentinel
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${spring.profiles.active}
+    # Sentinel 配置项，对应 SentinelProperties 配置属性类
+#    sentinel:
+#      enabled: true # 是否开启。默认为 true 开启
+#      eager: true # 是否饥饿加载。默认为 false 关闭
+#      transport:
+#        dashboard: localhost:8085 # Sentinel 控制台地址
+#      filter:
+#        url-patterns: /** # 拦截请求的地址。默认为 /*
+#      # Sentinel规则
+#      datasource:
+#        flow:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            namespace: ${spring.profiles.active}
+#            dataId: ${spring.application.name}-flow-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: flow
+#        degrade:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-degrade-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: degrade
+#        system:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-system-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: system
+#        authority:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-authority-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: authority
+#        param-flow:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-param-flow-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: param-flow
+#        gw-flow:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-gw-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: gw-flow
+#        gw-api-group:
+#          nacos:
+#            server-addr: ${nacos.server-addr}
+#            dataId: ${spring.application.name}-gw-api-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: gw-api-group
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*' # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
+#  endpoint:
+#    # Health 端点配置项，对应 HealthProperties 配置类
+#    health:
+#      enabled: true # 是否开启。默认为 true 开启。
+#      show-details: ALWAYS # 何时显示完整的健康信息。默认为 NEVER 都不展示。可选 WHEN_AUTHORIZED 当经过授权的用户；可选 ALWAYS 总是展示。
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN
+

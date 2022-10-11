@@ -1,0 +1,6 @@
+server:
+  port: 19888
+
+spring:
+  application:
+    name: sentinel-guide
