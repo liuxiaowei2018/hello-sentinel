@@ -6,6 +6,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>sentinel-induction</module>
+        <module>spring-cloud-alibaba-sentinel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
