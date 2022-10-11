@@ -1,4 +1,4 @@
-package com.open.sentinel;
+package com.open.sentinel.test;
 
 import com.alibaba.csp.sentinel.Entry;
 import com.alibaba.csp.sentinel.SphU;

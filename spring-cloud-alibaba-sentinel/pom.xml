@@ -14,6 +14,7 @@
     <modules>
         <module>sentinel-actuator</module>
         <module>sentinel-nacos</module>
+        <module>sentinel-feign</module>
     </modules>
 
     <properties>

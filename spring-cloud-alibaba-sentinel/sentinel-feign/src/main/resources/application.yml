@@ -1,9 +1,9 @@
 server:
-  port: 19450
+  port: 19452
 
 spring:
   application:
-    name: sentinel-actuator
+    name: sentinel-feign
   cloud:
     # Sentinel 配置项，对应 SentinelProperties 配置属性类
     sentinel:
@@ -14,16 +14,15 @@ spring:
       filter:
         url-patterns: /** # 拦截请求的地址。默认为 /*
 
-resttemplate:
+feign:
   sentinel:
-    enabled: true # 开启 Sentinel 对 Feign 的支持，默认为 true 开启。
+    enabled: true # 开启 Sentinel 对 Feign 的支持，默认为 false 关闭。
 
 management:
   endpoints:
     web:
       exposure:
         include: '*' # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
-  # http://127.0.0.1:19450/actuator/sentinel
   endpoint:
     # Health 端点配置项，对应 HealthProperties 配置类
     health:
